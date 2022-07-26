@@ -19,7 +19,7 @@ private:
   static const int leaderID = 16, followerID = 17;
   static const int encoderA = 8, encoderB = 9;
   static const bool encoderInverted = false;
-  static const double encoderPulse = 1.0 / 360.0;
+  static constexpr double encoderPulse = 1.0 / 360.0;
   static const frc::Encoder::EncodingType encoderType = frc::Encoder::EncodingType::k4X;
 
   const units::voltage::volt_t voltage{V};

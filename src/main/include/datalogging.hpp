@@ -48,7 +48,7 @@ namespace data
     private:
         std::vector<double> time;
         std::vector<State<N>> states;
-        int size;
+        unsigned int size;
         void checkSize()
         {
             int tempSize = time.size();
@@ -57,12 +57,17 @@ namespace data
         }
 
     public:
-        TimeSignatureLogger(int size)
+        TimeSignatureLogger(unsigned int size)
         {
             time.reserve(size);
             states.reserve(size);
 
             this->size = size;
+        }
+
+        void log(double currentTime, double currentValue)
+        {
+            log(currentTime, {currentValue});
         }
 
         void log(double currentTime, const std::vector<double> &currentData)
@@ -76,7 +81,7 @@ namespace data
             states.push_back(currentState);
         }
 
-        void printIndex(int index)
+        void printIndex(unsigned int index)
         {
             // if index would cause an error, just return
             if (index >= time.size())
