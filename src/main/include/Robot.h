@@ -11,6 +11,8 @@
 #include <rev/CANSparkMax.h>
 #include <units/time.h>
 
+#include "logger.hpp"
+
 class Robot : public frc::TimedRobot
 {
 private:
